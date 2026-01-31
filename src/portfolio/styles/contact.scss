@@ -1,0 +1,57 @@
+@use './variables';
+
+.contact {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 0;
+}
+
+.contact__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.contact__heading {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  color: #fff;
+}
+
+.contact__intro {
+  max-width: 32em;
+  margin: 0 auto 2.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.contact__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: variables.$accent-purple;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .contact__links {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}

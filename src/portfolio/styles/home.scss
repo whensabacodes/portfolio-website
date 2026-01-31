@@ -1,36 +1,5 @@
 @use './variables';
 
-.home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  padding-top: 3.5rem;
-  text-align: center;
-
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.6;
-    max-width: 600px;
-  }
-}
-
 // Split-section layout (About, Projects, Contact)
 #about,
 #projects,

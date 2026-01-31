@@ -1,0 +1,35 @@
+@use './variables';
+
+#about.about {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 0;
+}
+
+.about__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 280px;
+}
+
+.about__placeholder {
+  width: 100%;
+  min-width: 200px;
+  max-width: 280px;
+  aspect-ratio: 1;
+  background: rgba(139, 92, 246, 0.08);
+  border-radius: 16px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow:
+    0 0 40px rgba(139, 92, 246, 0.15),
+    0 0 80px rgba(139, 92, 246, 0.08);
+}
+
+@media (max-width: 900px) {
+  .about__placeholder {
+    max-width: 240px;
+  }
+}
