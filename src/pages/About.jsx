@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { site } from '../data/site';
+import BackToHome from '../components/navigation/BackToHome';
 import {
   AboutIntro,
   AboutGermany,
@@ -36,6 +37,7 @@ function About() {
   return (
     <div className="about-page">
       <div className="about-page__inner container">
+        <BackToHome />
         <AboutIntro copy={copy} />
         <AboutGermany copy={copy.germany} />
         <AboutTimeline copy={copy.journey} />

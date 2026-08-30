@@ -1,9 +1,11 @@
 import { site } from '../data/site';
+import BackToHome from '../components/navigation/BackToHome';
 
 function Resume() {
   return (
     <div className="page">
       <div className="page__inner">
+        <BackToHome />
         <h1 className="page__heading">Resume</h1>
         <p className="page__lede">
           Downloadable résumé will live here. No PDF is in the repository yet —

@@ -51,18 +51,30 @@
   letter-spacing: 0.04em;
   color: var(--color-text-muted);
   opacity: 0.72;
+  text-decoration: none;
+  cursor: pointer;
   transition:
     opacity var(--duration-fast) var(--ease-standard),
     color var(--duration-fast) var(--ease-standard);
 
   &:hover {
     opacity: 1;
+    color: var(--color-text);
     text-decoration: underline;
     text-underline-offset: 0.2em;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
   }
 }
 
 .hero-center__hello {
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
   margin: 0 0 var(--space-sm);
   font-family: var(--font-display);
   font-size: clamp(2.25rem, 1.5rem + 2.6vw, 3.5rem);
@@ -70,6 +82,59 @@
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-standard);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 4px;
+  }
+}
+
+.hero-center__hello--paint {
+  --cursor-x: 50%;
+  --cursor-y: 50%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -0.12em -0.18em;
+    z-index: -1;
+    border-radius: 0.15em;
+    pointer-events: none;
+    background: radial-gradient(
+      circle 4rem at var(--cursor-x) var(--cursor-y),
+      color-mix(in srgb, var(--color-accent-mint) 72%, transparent),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--ease-standard);
+  }
+
+  &[data-paint-active='true']::before,
+  &:focus-visible::before {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  .hero-center__hello--paint::before {
+    display: none;
+  }
+}
+
+[data-reduced-motion='true'] {
+  .hero-center__hello--paint::before {
+    display: none;
+  }
+
+  .hero-center__hello:hover,
+  .hero-center__hello:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+  }
 }
 
 .hero-center__title {

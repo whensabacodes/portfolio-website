@@ -17,6 +17,10 @@
   max-width: min(var(--container-max), 58rem);
 }
 
+.about-page__inner > .back-home {
+  margin-bottom: calc(0.85rem - clamp(3.75rem, 7vw, 6rem));
+}
+
 .about-page__hand-label {
   margin: 0 0 0.65rem;
   font-family: var(--font-hand);

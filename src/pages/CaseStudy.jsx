@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import Gallery from '../components/media/Gallery';
+import BackToHome from '../components/navigation/BackToHome';
 import { getPreviewImages, getProjectBySlug } from '../data/projects';
 
 function CaseStudy() {
@@ -12,6 +13,7 @@ function CaseStudy() {
     return (
       <div className="page">
         <div className="page__inner">
+          <BackToHome />
           <h1 className="page__heading">Project not found</h1>
           <p className="page__lede">
             No project matches <code>{slug}</code>.
@@ -27,6 +29,7 @@ function CaseStudy() {
   return (
     <div className="page">
       <div className="page__inner">
+        <BackToHome />
         <p className="page__note">
           <Link to="/work">← Work</Link>
         </p>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { site } from '../data/site';
 import { getProfessionalProjectsGrouped } from '../data/projects';
 import { getWorkSidebarFilters } from '../data/projectFolders';
+import BackToHome from '../components/navigation/BackToHome';
 import {
   WorkIntro,
   WorkSidebar,
@@ -17,6 +18,7 @@ function Work() {
   return (
     <div className="work-page">
       <div className="work-page__inner container">
+        <BackToHome />
         <WorkIntro copy={copy} />
 
         <div className="work-page__browser">

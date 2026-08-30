@@ -15,6 +15,10 @@
   gap: 2.5rem;
 }
 
+.work-page__inner > .back-home {
+  margin-bottom: calc(0.75rem - 2.5rem);
+}
+
 .work-page__intro {
   max-width: 36rem;
 }

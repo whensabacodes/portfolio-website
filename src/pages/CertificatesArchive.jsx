@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { certificates } from '../data/certificates';
+import BackToHome from '../components/navigation/BackToHome';
 
 /**
  * Compatibility route for the previous certificates archive page.
@@ -8,6 +9,7 @@ function CertificatesArchive() {
   return (
     <div className="certificates certificates--page page">
       <div className="certificates__inner">
+        <BackToHome />
         <h1 className="certificates__heading">All Certificates</h1>
         <p className="certificates__description">
           Full-resolution view of all certificates and achievements.

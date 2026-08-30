@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProjectCard from '../components/projects/ProjectCard';
 import Gallery from '../components/media/Gallery';
+import BackToHome from '../components/navigation/BackToHome';
 import { getPlaygroundItems } from '../data/playground';
 
 function Playground() {
@@ -11,6 +12,7 @@ function Playground() {
   return (
     <div className="page projects">
       <div className="projects__inner">
+        <BackToHome />
         <h1 className="projects__heading">Playground</h1>
         <p className="page__lede">
           Creative experiments and small frontend projects. Incomplete media is
