@@ -93,44 +93,6 @@
   max-width: 34ch;
 }
 
-// —— Scroll cue ——
-.hero-scroll {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-  margin-top: var(--space-xl);
-  text-decoration: none;
-  color: var(--color-text-subtle);
-  opacity: 0.85;
-  transition:
-    color var(--duration-fast) var(--ease-standard),
-    opacity var(--duration-fast) var(--ease-standard);
-
-  &:hover,
-  &:focus-visible {
-    color: var(--color-text);
-    opacity: 1;
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--color-focus);
-    outline-offset: 4px;
-  }
-}
-
-.hero-scroll__label {
-  font-family: var(--font-hand);
-  font-size: var(--text-meta);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-}
-
-.hero-scroll__arrow {
-  font-size: 0.95rem;
-  line-height: 1;
-}
-
 // —— Orbital doodles (icon-only by default) ——
 .hero-orbit {
   position: absolute;
@@ -652,12 +614,12 @@
 // —— Tablet ——
 @media (max-width: layout.$bp-md) {
   .home-hero {
-    min-height: auto;
+    min-height: calc(100svh - var(--nav-height));
     padding-top: calc(var(--nav-height) + var(--space-md));
   }
 
   .home-hero__canvas {
-    min-height: 36rem;
+    min-height: calc(100svh - var(--nav-height) - 2.5rem);
   }
 
   .hero-center__hello {
@@ -797,27 +759,27 @@
   }
 
   .hero-orbit-item--top-left {
-    order: 2;
-  }
-
-  .hero-orbit-item--top-right {
-    order: 2;
-  }
-
-  .hero-orbit-item--mid-left {
-    order: 3;
-  }
-
-  .hero-orbit-item--mid-right {
-    order: 3;
+    order: 2; /* projects/ */
   }
 
   .hero-orbit-item--bottom-left {
-    order: 4;
+    order: 3; /* work.exe */
+  }
+
+  .hero-orbit-item--top-right {
+    order: 4; /* interests.log */
   }
 
   .hero-orbit-item--bottom-right {
-    order: 4;
+    order: 5; /* currently.log */
+  }
+
+  .hero-orbit-item--mid-right {
+    order: 6; /* resume.pdf */
+  }
+
+  .hero-orbit-item--mid-left {
+    order: 7; /* contact.txt */
   }
 
   .hero-decor {

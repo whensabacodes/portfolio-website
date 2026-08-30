@@ -42,7 +42,17 @@ import happyBirthday3 from '../assets/projects/happy-birthday-website/happy-birt
 /**
  * @typedef {'professional' | 'personal' | 'experiment'} ProjectType
  * @typedef {'complete' | 'incomplete' | 'placeholder'} AssetStatus
+ * @typedef {'wingify' | 'appventurez'} WorkCompanyId
  */
+
+/**
+ * Employer folders for /work grouping (not client/project names).
+ * Projects map to employers via `company`; SuperDeli + InstaCEI → appventurez.
+ */
+export const workCompanies = [
+  { id: 'wingify', label: 'At Wingify', path: 'wingify/' },
+  { id: 'appventurez', label: 'At Appventurez', path: 'appventurez/' },
+];
 
 /** @type {Array<Object>} */
 export const projects = [
@@ -75,6 +85,8 @@ export const projects = [
     status: 'complete',
     assetStatus: 'complete',
     caseStudyAvailable: false,
+    company: 'wingify',
+    folderLabel: 'VWO Insights',
   },
   {
     id: 'superdeli',
@@ -103,6 +115,8 @@ export const projects = [
     status: 'complete',
     assetStatus: 'complete',
     caseStudyAvailable: false,
+    company: 'appventurez',
+    folderLabel: 'SuperDeli',
   },
   {
     id: 'instacei',
@@ -132,6 +146,8 @@ export const projects = [
     status: 'complete',
     assetStatus: 'complete',
     caseStudyAvailable: false,
+    company: 'appventurez',
+    folderLabel: 'InstaCEI',
   },
   {
     id: 'appventurez-cms',
@@ -168,6 +184,8 @@ export const projects = [
     assetStatus: 'incomplete', // website screenshots not yet added
     caseStudyAvailable: false,
     hasGalleryTabs: true,
+    company: 'appventurez',
+    folderLabel: 'Appventurez CMS',
   },
   {
     id: 'note-taking-app',
@@ -277,6 +295,44 @@ export function getFeaturedProjects() {
 
 export function getProfessionalProjects() {
   return projects.filter((project) => project.type === 'professional');
+}
+
+export function getWorkCompany(companyId) {
+  return workCompanies.find((company) => company.id === companyId) ?? null;
+}
+
+/** Professional projects grouped by company folder order. */
+export function getProfessionalProjectsGrouped(companyFilter = 'all') {
+  const professional = getProfessionalProjects();
+  const filtered =
+    companyFilter === 'all'
+      ? professional
+      : professional.filter((project) => project.company === companyFilter);
+
+  return workCompanies
+    .map((company) => ({
+      company,
+      projects: filtered.filter((project) => project.company === company.id),
+    }))
+    .filter((group) => group.projects.length > 0);
+}
+
+/**
+ * Homepage Work teaser — small subset from the same professional projects.
+ * Prefers Wingify first, then Appventurez (CMS before client projects).
+ */
+export function getHomepageWorkPreview(limit = 4) {
+  const professional = getProfessionalProjects();
+  const wingify = professional.filter((project) => project.company === 'wingify');
+  const appventurez = professional
+    .filter((project) => project.company === 'appventurez')
+    .sort((a, b) => {
+      if (a.id === 'appventurez-cms') return -1;
+      if (b.id === 'appventurez-cms') return 1;
+      return 0;
+    });
+
+  return [...wingify, ...appventurez].slice(0, limit);
 }
 
 export function getPersonalProjects() {

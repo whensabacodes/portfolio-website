@@ -1,6 +1,5 @@
 import HeroCenter from './HeroCenter';
 import HeroOrbit from './HeroOrbit';
-import HeroScrollPrompt from './HeroScrollPrompt';
 import HeroDecor from './HeroDecor';
 
 function Hero() {
@@ -11,7 +10,6 @@ function Hero() {
         <HeroOrbit />
         <div className="home-hero__heart">
           <HeroCenter />
-          <HeroScrollPrompt />
         </div>
       </div>
     </section>

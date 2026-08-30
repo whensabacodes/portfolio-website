@@ -4,29 +4,10 @@ import { Button } from '../../../components/ui';
 
 function Contact() {
   const revealRef = useReveal();
-  const { contact, contactHeading, contactIntro } = site;
-
-  const links = [
-    contact.email && {
-      label: contact.emailIsPlaceholder ? 'Email (placeholder)' : 'Email',
-      href: `mailto:${contact.email}`,
-    },
-    contact.github && {
-      label: contact.githubIsPlaceholder ? 'GitHub (placeholder)' : 'GitHub',
-      href: contact.github,
-      external: true,
-    },
-    contact.linkedIn && {
-      label: contact.linkedInIsPlaceholder ? 'LinkedIn (placeholder)' : 'LinkedIn',
-      href: contact.linkedIn,
-      external: true,
-    },
-    contact.instagram && {
-      label: 'Instagram',
-      href: contact.instagram,
-      external: true,
-    },
-  ].filter(Boolean);
+  const { contact, contactHeading, contactIntro, contactCta } = site;
+  const handle = contact.instagramHandle
+    ? `@${contact.instagramHandle.replace(/^@/, '')}`
+    : null;
 
   return (
     <section className="home-contact" id="contact" ref={revealRef}>
@@ -37,25 +18,30 @@ function Contact() {
           <p className="home-contact__intro text-muted">{contactIntro}</p>
 
           <nav className="home-contact__links cluster" aria-label="Contact links">
-            {links.map((link) => (
+            {contact.email ? (
               <a
-                key={link.label}
-                href={link.href}
+                href={`mailto:${contact.email}`}
                 className="home-contact__link"
-                {...(link.external
-                  ? { target: '_blank', rel: 'noopener noreferrer' }
-                  : {})}
               >
-                {link.label}
+                {contact.email}
               </a>
-            ))}
+            ) : null}
+            {handle && contact.instagramUrl ? (
+              <a
+                href={contact.instagramUrl}
+                className="home-contact__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram {handle}
+                <span className="visually-hidden"> (opens in a new tab)</span>
+              </a>
+            ) : null}
           </nav>
 
-          {contact.email && (
-            <Button href={`mailto:${contact.email}`} variant="primary">
-              Say hello
-            </Button>
-          )}
+          <Button to="/contact" variant="primary">
+            {contactCta || 'Get in touch →'}
+          </Button>
         </div>
       </div>
     </section>

@@ -34,13 +34,29 @@ export const site = {
     statusLabel: 'Open to frontend / UI roles',
   },
   contact: {
-    email: 'hello@example.com',
-    emailIsPlaceholder: true,
+    email: 'sabaqaiser39@gmail.com',
+    emailIsPlaceholder: false,
+    instagramHandle: 'zforart',
+    instagramUrl: 'https://www.instagram.com/zforart/',
     linkedIn: 'https://linkedin.com',
     linkedInIsPlaceholder: true,
     github: 'https://github.com',
     githubIsPlaceholder: true,
-    instagram: null,
+  },
+  contactPage: {
+    heading: 'Contact',
+    intro:
+      'Have a project, an opportunity, or just an interesting idea? Let’s talk.',
+    speechBubble: 'Hey there! Got something interesting in mind?',
+    form: {
+      nameLabel: 'Name',
+      namePlaceholder: 'Your name',
+      emailLabel: 'Email',
+      emailPlaceholder: 'your@email.com',
+      messageLabel: 'Message',
+      messagePlaceholder: 'Tell me a little about your project...',
+      submitLabel: 'Submit',
+    },
   },
   currently: {
     summary:
@@ -120,6 +136,23 @@ export const site = {
     paragraph:
       "I'm a frontend engineer specializing in clean UI architecture, design systems, and seamless user journeys. I combine creativity, structured thinking, and engineering precision to build modern interfaces that feel intuitive and look refined.",
   },
+  workPage: {
+    eyebrow: 'work.exe',
+    heading: 'WORK',
+    lede: "Things I've shipped professionally.",
+    description:
+      "A collection of products, features, and interfaces I've worked on at Wingify and Appventurez — plus client work delivered along the way.",
+    closingNote:
+      'From complex platforms to tiny interactions — I care about solving real problems with thoughtful design and clean code.',
+    pathRoot: 'work/',
+  },
+  homeSelectedWork: {
+    eyebrow: 'work.exe',
+    heading: "Things I've shipped professionally.",
+    lede:
+      'A preview of products and interfaces from Wingify and Appventurez — open a folder, or see the full archive.',
+    cta: 'See all work →',
+  },
   about: {
     paragraphs: [
       "I'm a frontend engineer specializing in clean UI architecture, design systems, and seamless user journeys. I combine creativity, structured thinking, and engineering precision to build modern interfaces that feel intuitive and look refined.",
@@ -180,8 +213,9 @@ export const site = {
   interestsTagline:
     "I'm endlessly curious — outside of tech I explore anything that sharpens creativity, expression, and how humans think.",
   contactIntro:
-    "Let's build something meaningful together. I'm open to internship roles in frontend development, UI engineering, and creative digital experiences.",
+    "Have a project, an opportunity, or just an interesting idea? Let's talk.",
   contactHeading: 'Wanna build something?',
+  contactCta: 'Get in touch →',
   seo: {
     defaultTitle: 'Saba Qaiser — Frontend Developer & UI Engineer',
     defaultDescription:
@@ -208,8 +242,7 @@ export const site = {
       accent: 'mint',
       doodle: 'folder',
       filename: 'projects/',
-      description:
-        'Personal projects, experiments, and things I build when nobody asks me to.',
+      description: "Things I've built because I wanted to.",
       ariaLabel: 'View projects',
     },
     {
@@ -221,19 +254,18 @@ export const site = {
       doodle: 'palette',
       filename: 'interests.log',
       description:
-        'Photography, travel, museums, books, technology, and the places I go looking for inspiration.',
+        'Photography, travel, art, books, gadgets & inspiration.',
       ariaLabel: 'Explore interests beyond code',
     },
     {
       id: 'contact',
       label: 'Contact',
-      to: '#contact',
+      to: '/contact',
       position: 'mid-left',
       accent: 'lavender',
       doodle: 'envelope',
       filename: 'contact.txt',
-      description:
-        "Get in touch. Let's build something thoughtful, useful, and a little more interesting together.",
+      description: "Get in touch — let's build something interesting.",
       ariaLabel: 'Contact Saba Qaiser',
     },
     {
@@ -244,8 +276,7 @@ export const site = {
       accent: 'mint',
       doodle: 'clipboard',
       filename: 'resume.pdf',
-      description:
-        "Want the short version? Here's where you can find my experience, skills, and background. Think we'd make a good team? Hire me.",
+      description: "Experience, background & the work I've done.",
       ariaLabel: 'View resume',
     },
     {
@@ -256,20 +287,19 @@ export const site = {
       accent: 'cyan',
       doodle: 'laptop',
       filename: 'work.exe',
-      description:
-        "Frontend work I've shipped professionally — products, interfaces, and problems I've solved along the way.",
+      description: "Professional work I've shipped.",
       ariaLabel: 'View professional work',
     },
     {
       id: 'currently',
       label: 'Currently',
-      to: '#currently',
+      to: '/about',
       position: 'bottom-right',
       accent: 'lavender',
       doodle: 'notebook',
       filename: 'currently.log',
       description:
-        "Currently pursuing my Master's, learning German, building new things, and figuring out what comes next.",
+        "What I'm learning, building and thinking about right now.",
       ariaLabel: 'See what Saba is currently working on',
     },
   ],

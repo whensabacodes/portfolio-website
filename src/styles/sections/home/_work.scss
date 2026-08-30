@@ -27,6 +27,12 @@
   color: var(--color-accent-primary);
 }
 
+.home-work__eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
 .home-work__title {
   margin: 0 0 var(--space-sm);
   font-size: var(--text-h2);
@@ -52,6 +58,25 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+.home-work__folders {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-xl) var(--space-lg);
+  align-items: start;
+}
+
+.home-work__folder-item {
+  min-width: 0;
+}
+
+.home-work--pro .home-work__cta {
+  margin-top: var(--space-2xl);
+  text-align: center;
+}
+
 .home-work__cta {
   margin-top: var(--space-2xl);
   text-align: left;
@@ -61,12 +86,12 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
+  font-family: var(--font-inter, var(--font-body));
   font-weight: var(--font-weight-semibold);
   color: var(--color-accent-primary);
   text-decoration: none;
   font-size: var(--text-label);
   letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
 
   &:hover {
     color: var(--color-accent-primary-hover);
@@ -210,9 +235,21 @@
     grid-template-columns: 1fr;
   }
 
+  .home-work__folders {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+  }
+
   .home-work__sticker {
     position: static;
     display: inline-block;
     margin-bottom: var(--space-sm);
+  }
+}
+
+@media (max-width: layout.$bp-sm) {
+  .home-work__folders {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
   }
 }
