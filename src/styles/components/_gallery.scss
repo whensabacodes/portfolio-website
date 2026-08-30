@@ -1,0 +1,47 @@
+// Tokenized gallery modal — overrides legacy purple modal when opened from homepage (and globally).
+.project-gallery-modal__overlay {
+  background: var(--color-overlay);
+  backdrop-filter: blur(6px);
+}
+
+.project-gallery-modal__close,
+.project-gallery-modal__arrow {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+
+  &:hover {
+    background: var(--color-surface-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+}
+
+.project-gallery-modal__tab {
+  color: var(--color-text-muted);
+  background: var(--color-surface-muted);
+  border-color: var(--color-border);
+
+  &--active {
+    color: var(--color-text);
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent-primary);
+  }
+}
+
+.project-gallery-modal__image-wrap {
+  border-color: var(--color-border);
+  background: var(--color-surface-muted);
+}
+
+.project-gallery-modal__counter {
+  color: var(--color-text-muted);
+  background: linear-gradient(transparent, color-mix(in srgb, var(--color-bg) 85%, transparent));
+}
+
+.project-gallery-modal__empty {
+  color: var(--color-text-subtle);
+}

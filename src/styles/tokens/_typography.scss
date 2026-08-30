@@ -1,0 +1,50 @@
+// Typography tokens — editorial display + PF body/UI + handwritten accents.
+// --font-pf-body is the named primary face; add @font-face when font files land.
+
+:root {
+  /* Primary portfolio face (wire @font-face later; fallbacks cover until then) */
+  --font-pf-body: 'PF Body';
+
+  /* Body / UI — majority of the portfolio */
+  --font-body: var(--font-pf-body), -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* Display / headlines — sophisticated editorial serif */
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia,
+    'Times New Roman', serif;
+
+  /* Handwritten — occasional annotations only */
+  --font-hand: 'Segoe Print', 'Bradley Hand', 'Apple Chancery', 'Noteworthy',
+    cursive;
+
+  /* Orbit hover notes / UI sans */
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
+
+  --font-label: var(--font-body);
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --text-display: clamp(2.5rem, 1.8rem + 3vw, 4rem);
+  --text-h1: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --text-h2: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --text-h3: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem);
+  --text-body: 1rem;
+  --text-body-lg: 1.125rem;
+  --text-label: 0.875rem;
+  --text-meta: 0.75rem;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.7;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-label: 0.06em;
+}

@@ -1,0 +1,63 @@
+@use '../../tokens/layout' as layout;
+
+.home-currently {
+  padding: var(--space-section-y) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.home-currently__header {
+  margin-bottom: var(--space-2xl);
+  max-width: var(--reading-width);
+}
+
+.home-currently__title {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--text-h2);
+}
+
+.home-currently__summary {
+  margin: 0;
+  max-width: none;
+}
+
+.home-currently__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin: 0;
+}
+
+.home-currently__block {
+  margin: 0;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.home-currently__label {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-accent-primary);
+}
+
+.home-currently__items {
+  margin: 0;
+
+  ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--color-text-muted);
+    font-size: var(--text-label);
+    line-height: var(--leading-relaxed);
+  }
+
+  li {
+    margin-bottom: var(--space-2xs);
+  }
+}
+
+@media (max-width: layout.$bp-md) {
+  .home-currently__grid {
+    grid-template-columns: 1fr;
+  }
+}

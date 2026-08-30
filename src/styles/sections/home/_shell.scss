@@ -1,0 +1,51 @@
+@use '../../tokens/layout' as layout;
+
+// Bright white notebook paper — subtle ruled lines only
+.home-page {
+  background-color: var(--color-bg);
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 26px,
+    var(--color-notebook-line) 27px
+  );
+  background-size: 100% 27px;
+  background-attachment: local;
+}
+
+// Scroll reveal (parent gets .is-visible from useReveal)
+.home-reveal {
+  opacity: 0;
+  transform: translateY(var(--motion-distance, 0.75rem));
+  transition:
+    opacity var(--duration-slow) var(--ease-enter),
+    transform var(--duration-slow) var(--ease-enter);
+}
+
+.is-visible .home-reveal,
+.home-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@for $i from 1 through 4 {
+  .home-reveal--delay-#{$i} {
+    transition-delay: #{$i * 70ms};
+  }
+}
+
+[data-reduced-motion='true'] {
+  .home-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

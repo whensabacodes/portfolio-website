@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="280" viewBox="0 0 400 280" fill="none">
+  <rect width="400" height="280" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+  <g transform="translate(200,140)">
+    <path d="M-60-40v80l60-40 60 40v-80l-60 40-60-40z" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-linejoin="round"/>
+    <path d="M-60-40l60 40 60-40" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  <text x="200" y="220" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="system-ui,sans-serif" font-size="14">Branded HTML email templates</text>
+</svg>
