@@ -1,0 +1,95 @@
+// Motion tokens + reduced-motion overrides.
+// Prefer opacity / transform / color. No animation libraries.
+
+:root {
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized: cubic-bezier(0.3, 0, 0, 1);
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  --motion-distance: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0.01ms;
+    --duration-normal: 0.01ms;
+    --duration-slow: 0.01ms;
+    --motion-distance: 0;
+  }
+}
+
+[data-reduced-motion='true'] {
+  --duration-fast: 0.01ms;
+  --duration-normal: 0.01ms;
+  --duration-slow: 0.01ms;
+  --motion-distance: 0;
+}
+
+// Shared keyframes available to later phases (disabled under reduced motion).
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-distance, 0.75rem));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes themeEyeBlink {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  45%,
+  55% {
+    transform: scaleY(0.08);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp var(--duration-slow) var(--ease-enter) forwards;
+}
+
+.fade-in {
+  animation: fadeIn var(--duration-slow) var(--ease-enter) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up,
+  .fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-reduced-motion='true'] {
+  .fade-in-up,
+  .fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .theme-toggle__glasses,
+  .theme-toggle__eyes {
+    transition: none !important;
+    animation: none !important;
+  }
+}

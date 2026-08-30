@@ -1,0 +1,58 @@
+@use '../../tokens/layout' as layout;
+
+.home-how {
+  padding: var(--space-section-y) 0;
+  border-top: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-bg-elevated) 50%, var(--color-bg));
+}
+
+.home-how__layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.home-how__title {
+  margin: 0 0 var(--space-md);
+  font-size: var(--text-h2);
+  max-width: 14ch;
+}
+
+.home-how__lede {
+  margin: 0;
+  max-width: var(--reading-width);
+}
+
+.home-how__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.home-how__item {
+  padding-left: var(--space-lg);
+  border-left: 2px solid var(--color-accent-primary);
+}
+
+.home-how__item-title {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--text-body-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.home-how__item-desc {
+  margin: 0;
+  max-width: none;
+  font-size: var(--text-label);
+  line-height: var(--leading-relaxed);
+}
+
+@media (max-width: layout.$bp-md) {
+  .home-how__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}

@@ -1,0 +1,126 @@
+@use '../tokens';
+@use '../tokens/layout' as layout;
+
+.site-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.site-layout__main {
+  flex: 1;
+  width: 100%;
+}
+
+// Homepage provides its own top spacing via section padding
+.site-layout__main:has(.home-page) {
+  padding-top: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-section-x);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.container--reading {
+  max-width: var(--reading-width);
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.stack--lg {
+  gap: var(--space-xl);
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: layout.$bp-sm) {
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: layout.$bp-md) {
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.page-shell {
+  width: 100%;
+  padding-top: var(--nav-height);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+.page-shell__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-section-y) var(--space-section-x);
+}
+
+// Backward-compatible page helpers used by scaffold pages (tokenized).
+.page {
+  width: 100%;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  padding-top: var(--nav-height);
+}
+
+.page__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-section-y) var(--space-section-x);
+}
+
+.page__heading {
+  font-size: var(--text-h1);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--space-md);
+}
+
+.page__lede {
+  max-width: var(--reading-width);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--space-xl);
+}
+
+.page__note {
+  color: var(--color-text-subtle);
+  font-size: var(--text-label);
+}

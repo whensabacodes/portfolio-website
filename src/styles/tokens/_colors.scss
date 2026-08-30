@@ -1,0 +1,92 @@
+// Semantic color tokens — pure white / pure black notebook + cool accents.
+
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  /* Pure white digital notebook */
+  --color-bg: #ffffff;
+  --color-bg-elevated: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f5f5f5;
+
+  --color-ink: #000000;
+  --color-ink-muted: #4a4a4a;
+  --color-ink-subtle: #7a7a7a;
+
+  --color-text: var(--color-ink);
+  --color-text-muted: var(--color-ink-muted);
+  --color-text-subtle: var(--color-ink-subtle);
+  --color-text-inverse: #ffffff;
+
+  --color-border: #e6e6e6;
+  --color-border-strong: #c8c8c8;
+
+  --color-accent-primary: var(--color-ink);
+  --color-accent-primary-hover: #000000;
+  --color-accent-secondary: #5a5a5a;
+  --color-accent-soft: rgba(0, 0, 0, 0.05);
+
+  /* Cool pastel accents only — doodles / orbit */
+  --color-accent-mint: #b4ddd0;
+  --color-accent-cyan: #b8d9ef;
+  --color-accent-lavender: #c9c2e8;
+  /* Aliases kept for existing class names */
+  --color-accent-yellow: var(--color-accent-cyan);
+  --color-accent-pink: var(--color-accent-lavender);
+
+  --color-focus: var(--color-ink);
+  --color-focus-ring: rgba(0, 0, 0, 0.28);
+
+  --color-danger: #9b2c2c;
+  --color-selection-bg: rgba(0, 0, 0, 0.1);
+  --color-selection-text: var(--color-ink);
+
+  --color-overlay: rgba(0, 0, 0, 0.5);
+
+  --color-notebook-line: rgba(0, 0, 0, 0.045);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Near-pure black digital notebook */
+  --color-bg: #000000;
+  --color-bg-elevated: #0a0a0a;
+  --color-surface: #0d0d0d;
+  --color-surface-muted: #1a1a1a;
+
+  --color-ink: #ffffff;
+  --color-ink-muted: #b0b0b0;
+  --color-ink-subtle: #7a7a7a;
+
+  --color-text: var(--color-ink);
+  --color-text-muted: var(--color-ink-muted);
+  --color-text-subtle: var(--color-ink-subtle);
+  --color-text-inverse: #000000;
+
+  --color-border: #2a2a2a;
+  --color-border-strong: #444444;
+
+  --color-accent-primary: var(--color-ink);
+  --color-accent-primary-hover: #ffffff;
+  --color-accent-secondary: #b0b0b0;
+  --color-accent-soft: rgba(255, 255, 255, 0.08);
+
+  --color-accent-mint: #4f8f7e;
+  --color-accent-cyan: #4f7fa0;
+  --color-accent-lavender: #6f6799;
+  --color-accent-yellow: var(--color-accent-cyan);
+  --color-accent-pink: var(--color-accent-lavender);
+
+  --color-focus: var(--color-ink);
+  --color-focus-ring: rgba(255, 255, 255, 0.35);
+
+  --color-danger: #f07178;
+  --color-selection-bg: rgba(255, 255, 255, 0.16);
+  --color-selection-text: var(--color-ink);
+
+  --color-overlay: rgba(0, 0, 0, 0.75);
+
+  --color-notebook-line: rgba(255, 255, 255, 0.06);
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="280" viewBox="0 0 400 280" fill="none">
+  <rect width="400" height="280" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+  <text x="200" y="140" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="system-ui,sans-serif" font-size="14">Certificate image</text>
+  <text x="200" y="160" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="system-ui,sans-serif" font-size="12">Replace with your certificate</text>
+</svg>

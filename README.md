@@ -1,16 +1,101 @@
-# React + Vite
+# Portfolio — Frontend / UI Engineer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site (V2 architecture). English-first. Targeting frontend / UI / product engineering roles, primarily in Germany and Europe.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19
+- Vite 7
+- JavaScript (JSX)
+- React Router 7
+- SCSS (Sass)
+- npm
 
-## React Compiler
+No TypeScript, Tailwind, or animation libraries in this phase.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Commands
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev      # local development
+npm run build    # production build
+npm run preview  # preview production build
+npm run lint
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Routes
+
+| Path | Page |
+|------|------|
+| `/` | Home |
+| `/work` | Professional work |
+| `/work/:slug` | Project / case-study scaffold |
+| `/about` | About, career, certificates archive |
+| `/playground` | Creative experiments |
+| `/resume` | Resume (structural placeholder) |
+| `/portfolio` | Redirect → `/` |
+| `/portfolio/certificates` | Compatibility certificates archive |
+
+## Architecture
+
+```
+src/
+  routes/           Route table
+  layouts/          SiteLayout (nav, outlet, footer)
+  pages/            Route-level pages
+  sections/home/    Home compositions
+  components/       Reusable UI (navigation, projects, media, theme, motion)
+  decorative/       Future doodles / stickers (empty for now)
+  data/             Content sources
+  hooks/            useTheme, useReducedMotion, useMediaQuery
+  styles/           tokens, base, layouts, utilities, legacy UI styles
+  assets/           portrait, projects, certificates, …
+```
+
+## Content
+
+| File | Purpose |
+|------|---------|
+| `src/data/site.js` | Identity, contact placeholders, about, nav, SEO shell |
+| `src/data/projects.js` | All projects (professional / personal / experiment) |
+| `src/data/experience.js` | Career entries extracted from existing content |
+| `src/data/certificates.js` | Certificate images + captions |
+| `src/data/playground.js` | Playground experiments (from project data) |
+
+Replace placeholder contact URLs in `site.js` before shipping.
+
+## Assets
+
+- Portrait: `src/assets/portrait/`
+- Project screenshots: `src/assets/projects/`
+- Certificates: `src/assets/certificates/`
+- Future doodles / illustrations / fonts: reserved folders under `src/assets/`
+
+## Design system (Phase 2)
+
+Tokens live in `src/styles/tokens/`:
+
+- colors (semantic light/dark)
+- typography
+- spacing
+- layout / breakpoints
+- motion (+ reduced-motion overrides)
+
+Theme:
+
+- `data-theme="light|dark"` (system default, user override persisted)
+- FOUC-prevention script in `index.html`
+- Eyes → glasses theme control in the navbar
+
+Motion:
+
+- `data-reduced-motion="true|false"` (OS + user override, persisted)
+- Motion: On/Off control in the navbar
+
+UI primitives: `src/components/ui/` (Button, TextLink, IconButton, SectionLabel, Tag, Divider)
+
+Legacy purple/black Home section styles remain quarantined under `src/styles/legacy/` for Work/About pages until later phases.
+
+## Branch
+
+Homepage experience work lives on `portfolio-v2/homepage-experience`.

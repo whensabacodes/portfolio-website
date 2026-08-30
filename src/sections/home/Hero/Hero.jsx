@@ -1,0 +1,21 @@
+import HeroCenter from './HeroCenter';
+import HeroOrbit from './HeroOrbit';
+import HeroScrollPrompt from './HeroScrollPrompt';
+import HeroDecor from './HeroDecor';
+
+function Hero() {
+  return (
+    <section className="home-hero" id="home" aria-label="Introduction">
+      <div className="home-hero__canvas">
+        <HeroDecor />
+        <HeroOrbit />
+        <div className="home-hero__heart">
+          <HeroCenter />
+          <HeroScrollPrompt />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;
