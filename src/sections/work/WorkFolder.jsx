@@ -39,12 +39,6 @@ function WorkFolder({ project, showCompany = false }) {
       {project.tech ? (
         <span className="work-folder__meta">{project.tech}</span>
       ) : null}
-      <span className="work-folder__hint" aria-hidden="true">
-        open →
-      </span>
-      <span className="work-folder__note" aria-hidden="true">
-        {project.description}
-      </span>
     </Link>
   );
 }

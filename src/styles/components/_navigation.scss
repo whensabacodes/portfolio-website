@@ -84,21 +84,6 @@
   border-left: none;
 }
 
-.footer {
-  width: 100%;
-  padding: var(--space-xl) var(--space-section-x);
-  border-top: 1px solid var(--color-border);
-  background-color: var(--color-bg);
-  text-align: center;
-
-  p {
-    margin: 0 auto;
-    max-width: none;
-    color: var(--color-text-muted);
-    font-size: var(--text-meta);
-  }
-}
-
 @media (max-width: layout.$bp-md) {
   .navbar__links {
     gap: var(--space-md);

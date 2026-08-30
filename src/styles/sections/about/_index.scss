@@ -1,0 +1,804 @@
+@use '../../tokens/layout' as layout;
+
+// About page — editorial reading hierarchy
+// About Me → My Germany → Where I've Been → What I Care About → Side Notes → Open To
+
+.about-page {
+  width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding-block: calc(var(--nav-height) + 2.5rem) 5rem;
+}
+
+.about-page__inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.75rem, 7vw, 6rem);
+  max-width: min(var(--container-max), 58rem);
+}
+
+.about-page__hand-label {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-hand);
+  font-size: clamp(0.92rem, 0.88rem + 0.15vw, 1.05rem);
+  line-height: var(--leading-snug);
+  color: var(--color-text-muted);
+}
+
+.about-section {
+  width: 100%;
+}
+
+.about-page__section-heading {
+  margin: 0 0 1rem;
+  max-width: 22ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 1.25rem + 0.85vw, 2rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  text-wrap: balance;
+}
+
+.about-page__prose {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 38rem;
+
+  p {
+    margin: 0;
+    font-family: var(--font-inter, var(--font-body));
+    font-size: var(--text-body);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-muted);
+  }
+
+  &--narrow {
+    max-width: 34rem;
+  }
+
+  &--editorial {
+    max-width: 36rem;
+
+    p {
+      color: var(--color-text);
+      font-size: clamp(1.02rem, 0.98rem + 0.12vw, 1.12rem);
+    }
+  }
+}
+
+.about-page__inline-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-family: var(--font-inter, var(--font-body));
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+
+  &:hover {
+    color: var(--color-text-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+}
+
+// —— 1. About Me (primary) ——
+.about-section--primary {
+  padding-bottom: clamp(0.5rem, 2vw, 1.25rem);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(11rem, 0.7fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.about-intro__copy {
+  padding-top: 0.25rem;
+  max-width: 36rem;
+}
+
+.about-intro__greeting {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 1.85rem + 2.4vw, 3.6rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  text-wrap: balance;
+}
+
+.about-intro__title {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-inter, var(--font-body));
+  font-size: clamp(1.05rem, 1rem + 0.2vw, 1.2rem);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-snug);
+  color: var(--color-text-muted);
+}
+
+.about-intro__bio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+
+  p {
+    margin: 0;
+    font-family: var(--font-inter, var(--font-body));
+    font-size: clamp(1rem, 0.96rem + 0.12vw, 1.08rem);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text);
+    max-width: 34rem;
+  }
+}
+
+.about-intro__cta {
+  display: inline-block;
+  margin-top: 1.35rem;
+  font-family: var(--font-inter, var(--font-body));
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+
+  &:hover {
+    color: var(--color-text-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+}
+
+.about-intro__photo-wrap {
+  position: relative;
+  margin: 0.5rem 0 0;
+  max-width: 15.5rem;
+  width: 100%;
+  justify-self: end;
+}
+
+.about-intro__photo-card {
+  position: relative;
+  padding: 0.55rem 0.55rem 1.15rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--color-ink) 6%, transparent),
+    6px 9px 0 color-mix(in srgb, var(--color-ink) 5%, transparent);
+  transform: rotate(1.8deg);
+  transition:
+    transform var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.about-intro__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+}
+
+.about-intro__photo-wrap:hover .about-intro__photo-card,
+.about-intro__photo-wrap:focus-within .about-intro__photo-card {
+  transform: rotate(0.3deg) translateY(-3px) scale(1.01);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--color-ink) 6%, transparent),
+    8px 12px 0 color-mix(in srgb, var(--color-ink) 7%, transparent);
+}
+
+.about-intro__tape {
+  position: absolute;
+  width: 3.2rem;
+  height: 1.2rem;
+  z-index: 2;
+  background: color-mix(in srgb, var(--color-accent-cyan) 55%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--color-border-strong) 50%, transparent);
+  opacity: 0.9;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--left {
+    top: -0.3rem;
+    left: 12%;
+  }
+
+  &--right {
+    top: -0.15rem;
+    right: 14%;
+    background: color-mix(in srgb, var(--color-accent-lavender) 50%, var(--color-surface));
+  }
+}
+
+.about-intro__photo-caption {
+  margin: 0.7rem 0.15rem 0;
+  font-family: var(--font-hand);
+  font-size: 0.85rem;
+  color: var(--color-text-subtle);
+  transform: rotate(-1.2deg);
+}
+
+// —— 2. India → Germany ——
+.about-germany {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(12rem, 0.85fr);
+  gap: clamp(1.5rem, 3.5vw, 2.75rem);
+  align-items: start;
+}
+
+.about-germany__visual {
+  position: relative;
+  margin: 0.5rem 0 0;
+  width: 100%;
+  max-width: 21rem;
+  // Reserve space so the offset stack doesn't collapse
+  aspect-ratio: 1 / 1.05;
+  justify-self: end;
+}
+
+.about-germany__shot {
+  margin: 0;
+  position: absolute;
+  width: 68%;
+}
+
+.about-germany__shot--one {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.about-germany__shot--two {
+  top: 30%;
+  left: 30%;
+  z-index: 2;
+}
+
+.about-germany__photo-card {
+  padding: 0.5rem 0.5rem 0.95rem;
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--color-border) 90%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--color-ink) 6%, transparent),
+    5px 8px 0 color-mix(in srgb, var(--color-ink) 5%, transparent);
+  transition:
+    transform var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+[data-theme='dark'] .about-germany__photo-card {
+  background: var(--color-surface);
+}
+
+.about-germany__shot--one .about-germany__photo-card {
+  transform: rotate(-3.2deg);
+}
+
+.about-germany__shot--two .about-germany__photo-card {
+  transform: rotate(2.6deg);
+}
+
+.about-germany__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+}
+
+.about-germany__shot:hover .about-germany__photo-card,
+.about-germany__shot:focus-within .about-germany__photo-card {
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--color-ink) 6%, transparent),
+    8px 12px 0 color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.about-germany__shot--one:hover .about-germany__photo-card,
+.about-germany__shot--one:focus-within .about-germany__photo-card {
+  transform: rotate(-1deg) translateY(-3px);
+}
+
+.about-germany__shot--two:hover .about-germany__photo-card,
+.about-germany__shot--two:focus-within .about-germany__photo-card {
+  transform: rotate(1deg) translateY(-3px);
+}
+
+.about-germany__tape {
+  position: absolute;
+  width: 2.85rem;
+  height: 1.05rem;
+  z-index: 3;
+  border: 1px solid color-mix(in srgb, var(--color-border-strong) 50%, transparent);
+  opacity: 0.9;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--one {
+    top: -0.28rem;
+    left: 28%;
+    background: color-mix(in srgb, var(--color-accent-mint) 55%, var(--color-surface));
+  }
+
+  &--two {
+    top: -0.22rem;
+    right: 18%;
+    background: color-mix(in srgb, var(--color-accent-lavender) 50%, var(--color-surface));
+  }
+}
+
+.about-germany__caption {
+  position: absolute;
+  left: 0.15rem;
+  bottom: 0;
+  z-index: 1;
+  margin: 0;
+  max-width: 14rem;
+  font-family: var(--font-hand);
+  font-size: 0.9rem;
+  line-height: var(--leading-snug);
+  color: var(--color-text-subtle);
+  transform: rotate(-1deg);
+}
+
+// —— 3. Where I've been (timeline) ——
+.about-timeline {
+  max-width: 40rem;
+}
+
+.about-timeline__list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0 0 0 0.15rem;
+  border-left: 1.5px solid var(--color-border-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about-timeline__item {
+  position: relative;
+  padding: 0 0 1.75rem 1.35rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -0.34rem;
+    top: 0.4rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--color-text);
+    border: 2px solid var(--color-bg);
+  }
+
+  &:last-child {
+    padding-bottom: 0.25rem;
+  }
+}
+
+.about-timeline__item--current::before {
+  background: color-mix(in srgb, var(--color-accent-cyan) 70%, var(--color-text));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent-cyan) 25%, transparent);
+}
+
+.about-timeline__item--education::before {
+  background: var(--color-bg);
+  border: 2px solid var(--color-text);
+}
+
+.about-timeline__item--current.about-timeline__item--education::before {
+  background: color-mix(in srgb, var(--color-accent-cyan) 55%, var(--color-bg));
+  border-color: var(--color-text);
+}
+
+.about-timeline__period {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-mono, var(--font-inter));
+  font-size: clamp(0.78rem, 0.74rem + 0.1vw, 0.86rem);
+  letter-spacing: 0.03em;
+  color: var(--color-text-subtle);
+}
+
+.about-timeline__item--current .about-timeline__period {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+.about-timeline__org {
+  margin: 0;
+  font-family: var(--font-inter, var(--font-body));
+  font-size: clamp(1.05rem, 1rem + 0.2vw, 1.2rem);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--color-text);
+}
+
+.about-timeline__title {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-inter, var(--font-body));
+  font-size: var(--text-label);
+  line-height: var(--leading-snug);
+  color: var(--color-text-muted);
+}
+
+.about-timeline__meta {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-hand);
+  font-size: 0.88rem;
+  color: var(--color-text-subtle);
+}
+
+// —— 4. What I care about ——
+.about-care {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(10rem, 0.7fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: start;
+  max-width: 46rem;
+}
+
+.about-care__visual {
+  position: relative;
+  margin: 1.75rem 0 0;
+  max-width: 13.5rem;
+  width: 100%;
+  justify-self: end;
+}
+
+.about-care__photo-card {
+  padding: 0.45rem 0.45rem 0.9rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--color-ink) 6%, transparent),
+    5px 8px 0 color-mix(in srgb, var(--color-ink) 5%, transparent);
+  transform: rotate(-1.8deg);
+  transition:
+    transform var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.about-care__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+}
+
+.about-care__visual:hover .about-care__photo-card,
+.about-care__visual:focus-within .about-care__photo-card {
+  transform: rotate(-0.3deg) translateY(-2px);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--color-ink) 6%, transparent),
+    7px 10px 0 color-mix(in srgb, var(--color-ink) 7%, transparent);
+}
+
+.about-care__tape {
+  position: absolute;
+  top: -0.28rem;
+  left: 34%;
+  width: 2.9rem;
+  height: 1.1rem;
+  z-index: 2;
+  background: color-mix(in srgb, var(--color-accent-cyan) 55%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--color-border-strong) 50%, transparent);
+  opacity: 0.9;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.about-care__caption {
+  margin: 0.7rem 0.15rem 0;
+  font-family: var(--font-hand);
+  font-size: 0.88rem;
+  line-height: var(--leading-snug);
+  color: var(--color-text-subtle);
+  transform: rotate(1deg);
+}
+
+// —— 5. Personal life / interests ——
+.about-life {
+  scroll-margin-top: calc(var(--nav-height) + 1.25rem);
+  padding-top: clamp(1rem, 2.5vw, 1.75rem);
+  border-top: 1px solid var(--color-border);
+}
+
+.about-life__header {
+  max-width: 28rem;
+  margin-bottom: 1.75rem;
+}
+
+.about-life__board {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 4vw, 3rem);
+  row-gap: clamp(1.35rem, 2.5vw, 2rem);
+  align-items: start;
+}
+
+.about-life__item {
+  margin: 0;
+  min-width: 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--color-border);
+  transition: transform var(--duration-normal) var(--ease-standard);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:nth-child(even) {
+    margin-top: 1.25rem;
+  }
+
+  &:nth-child(5),
+  &:nth-child(6) {
+    margin-top: 0.35rem;
+  }
+}
+
+.about-life__label {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-hand);
+  font-size: clamp(1.02rem, 0.96rem + 0.2vw, 1.15rem);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-snug);
+  color: var(--color-text);
+}
+
+.about-life__desc {
+  margin: 0;
+  font-family: var(--font-inter, var(--font-body));
+  font-size: var(--text-label);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-muted);
+  max-width: 32rem;
+}
+
+.about-life__link {
+  display: inline-block;
+  margin-top: 0.65rem;
+  font-family: var(--font-inter, var(--font-body));
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+
+  &:hover {
+    color: var(--color-text-muted);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+}
+
+// —— Reduced motion ——
+[data-reduced-motion='true'] {
+  .about-intro__photo-card,
+  .about-germany__photo-card,
+  .about-care__photo-card,
+  .about-life__item {
+    transition: none;
+  }
+
+  .about-intro__photo-wrap:hover .about-intro__photo-card,
+  .about-intro__photo-wrap:focus-within .about-intro__photo-card {
+    transform: rotate(1.8deg);
+    box-shadow:
+      0 1px 0 color-mix(in srgb, var(--color-ink) 6%, transparent),
+      6px 9px 0 color-mix(in srgb, var(--color-ink) 5%, transparent);
+  }
+
+  .about-germany__shot--one:hover .about-germany__photo-card,
+  .about-germany__shot--one:focus-within .about-germany__photo-card {
+    transform: rotate(-3.2deg);
+  }
+
+  .about-germany__shot--two:hover .about-germany__photo-card,
+  .about-germany__shot--two:focus-within .about-germany__photo-card {
+    transform: rotate(2.6deg);
+  }
+
+  .about-care__visual:hover .about-care__photo-card,
+  .about-care__visual:focus-within .about-care__photo-card {
+    transform: rotate(-1.8deg);
+  }
+
+  .about-life__item:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-intro__photo-card,
+  .about-germany__photo-card,
+  .about-care__photo-card,
+  .about-life__item {
+    transition: none;
+  }
+
+  .about-intro__photo-wrap:hover .about-intro__photo-card,
+  .about-intro__photo-wrap:focus-within .about-intro__photo-card {
+    transform: rotate(1.8deg);
+  }
+
+  .about-germany__shot--one:hover .about-germany__photo-card,
+  .about-germany__shot--one:focus-within .about-germany__photo-card {
+    transform: rotate(-3.2deg);
+  }
+
+  .about-germany__shot--two:hover .about-germany__photo-card,
+  .about-germany__shot--two:focus-within .about-germany__photo-card {
+    transform: rotate(2.6deg);
+  }
+
+  .about-care__visual:hover .about-care__photo-card,
+  .about-care__visual:focus-within .about-care__photo-card {
+    transform: rotate(-1.8deg);
+  }
+
+  .about-life__item:hover {
+    transform: none;
+  }
+}
+
+// —— Responsive ——
+@media (max-width: layout.$bp-md) {
+  .about-intro,
+  .about-germany,
+  .about-care {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .about-intro__photo-wrap {
+    justify-self: start;
+    order: -1;
+    max-width: 13.5rem;
+  }
+
+  .about-germany__visual,
+  .about-care__visual {
+    justify-self: start;
+    margin-top: 0;
+    max-width: none;
+  }
+
+  .about-care__visual {
+    max-width: 14rem;
+  }
+
+  .about-care__photo-card,
+  .about-care__caption {
+    transform: none;
+  }
+
+  .about-germany__visual {
+    max-width: 20rem;
+    aspect-ratio: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .about-germany__shot {
+    position: relative;
+    width: 78%;
+  }
+
+  .about-germany__shot--one {
+    top: auto;
+    left: auto;
+    align-self: flex-start;
+  }
+
+  .about-germany__shot--two {
+    top: auto;
+    left: auto;
+    margin-top: -1.35rem;
+    align-self: flex-end;
+  }
+
+  .about-germany__shot--one .about-germany__photo-card {
+    transform: rotate(-2deg);
+  }
+
+  .about-germany__shot--two .about-germany__photo-card {
+    transform: rotate(1.8deg);
+  }
+
+  .about-germany__caption {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: 0.85rem;
+    transform: none;
+  }
+
+  .about-life__board {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.25rem;
+    row-gap: 1.25rem;
+  }
+
+  .about-life__item:nth-child(even),
+  .about-life__item:nth-child(5),
+  .about-life__item:nth-child(6) {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: layout.$bp-sm) {
+  .about-page {
+    padding-block: calc(var(--nav-height) + 1.75rem) 3.5rem;
+  }
+
+  .about-page__inner {
+    gap: 3rem;
+  }
+
+  .about-intro__photo-wrap {
+    max-width: 12.5rem;
+    margin-inline: auto;
+    justify-self: center;
+  }
+
+  .about-germany__visual {
+    max-width: 100%;
+  }
+
+  .about-germany__shot {
+    width: 82%;
+  }
+
+  .about-germany__shot--two {
+    margin-top: -1rem;
+  }
+
+  .about-life__board {
+    grid-template-columns: 1fr;
+  }
+
+  .about-life__item:hover {
+    transform: none;
+  }
+}

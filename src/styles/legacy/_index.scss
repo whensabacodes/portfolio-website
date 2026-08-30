@@ -2,10 +2,9 @@
 // LEGACY PRESENTATION (non-home pages)
 // =============================================================================
 // Playground + ProjectCard still use projects.scss.
-// Work page now uses tokenized sections/work styles.
+// Work / Contact / About pages use tokenized section styles.
+// Certificates archive still uses certificates.scss.
 // =============================================================================
 
-@use 'about';
 @use 'projects';
 @use 'certificates';
-@use 'interests';

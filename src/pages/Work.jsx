@@ -6,7 +6,6 @@ import {
   WorkIntro,
   WorkSidebar,
   WorkProjectBrowser,
-  WorkClosingNote,
 } from '../sections/work';
 
 function Work() {
@@ -29,8 +28,6 @@ function Work() {
           />
           <WorkProjectBrowser groups={groups} />
         </div>
-
-        <WorkClosingNote note={copy.closingNote} />
       </div>
     </div>
   );

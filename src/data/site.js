@@ -142,8 +142,6 @@ export const site = {
     lede: "Things I've shipped professionally.",
     description:
       "A collection of products, features, and interfaces I've worked on at Wingify and Appventurez — plus client work delivered along the way.",
-    closingNote:
-      'From complex platforms to tiny interactions — I care about solving real problems with thoughtful design and clean code.',
     pathRoot: 'work/',
   },
   homeSelectedWork: {
@@ -153,65 +151,87 @@ export const site = {
       'A preview of products and interfaces from Wingify and Appventurez — open a folder, or see the full archive.',
     cta: 'See all work →',
   },
-  about: {
+  aboutPage: {
+    label: 'about me',
+    greeting: "Hi, I'm Saba.",
+    title: 'UI/UX Engineer & Frontend Developer',
     paragraphs: [
-      "I'm a frontend engineer specializing in clean UI architecture, design systems, and seamless user journeys. I combine creativity, structured thinking, and engineering precision to build modern interfaces that feel intuitive and look refined.",
-      "With 4+ years of experience across VWO Insights, SuperDeli, InstaCEI, and internal CMS platforms, I've worked on high-impact features such as heatmaps, session recordings, surveys, funnels, and dashboard interfaces. My work focuses on performance, UX clarity, and maintainable component systems.",
+      "I'm a UI/UX Engineer and Frontend Developer who likes being somewhere between a good idea and the screen it eventually becomes. I care about the details people notice, the ones they don't, and especially the tiny things that make an interface feel obvious instead of complicated.",
+      "I've spent the last few years building real products with different teams — client and product interfaces at Appventurez, then VWO's product experience at Wingify, including Heatmaps, Session Recordings, Funnels, AI features, and reusable components.",
+      "These days I'm studying in Germany, but I still spend a lot of free time building and tinkering with interfaces. I'm happiest when engineering, visual thinking, and a slightly obsessive attention to detail get to sit at the same table.",
     ],
-    highlights: [
-      'Strong experience with React, Angular, JavaScript/TypeScript, SCSS',
-      'Built data visualization modules (Heatmaps, Funnels, Recordings)',
-      'Collaborated with design teams to refine UI/UX at scale',
-      'Led UI architecture discussions and mentored interns',
-      'Improved performance, refactored legacy code, and ensured production stability',
-    ],
+    germany: {
+      label: 'india → germany',
+      heading: 'A big move, a new chapter.',
+      paragraphs: [
+        "I moved from India to Germany for my master's, and it's turned into more than just going back to university.",
+        "I'm pursuing an M.Sc. in Research in Computer & Systems Engineering (RCSE) at TU Ilmenau — started in 2025. Between lectures, I keep building personal projects and poking at frontend and UI ideas that won't leave me alone.",
+        "It's a quieter kind of busy: studying, making things, and figuring out what comes next.",
+      ],
+      note: 'studying, building, exploring',
+    },
+    journey: {
+      label: 'so far',
+      heading: "Where I've been",
+      workLinkLabel: 'See the work →',
+    },
+    care: {
+      heading: 'What I care about',
+      paragraphs: [
+        'I care about the parts of an interface people notice without realizing they\'re noticing them — spacing, interaction, empty states, tiny transitions, and the moment something just clicks.',
+        'Good design doesn\'t stop at looking right. I like getting close to the implementation: reusable components, accessibility, edge cases, and translating product ideas into interfaces that feel intuitive.',
+      ],
+      note: 'details · usability · craft',
+    },
+    sideNotes: {
+      label: 'away from the keyboard',
+      heading: 'What I get curious about',
+      items: [
+        {
+          id: 'photography',
+          label: 'Photography',
+          description:
+            'I carry a camera more often than I probably need to. I like documenting places, little details, and things that catch my eye.',
+        },
+        {
+          id: 'travel',
+          label: 'Travel & exploring',
+          description:
+            "I like going somewhere I've never been before and seeing what the place has to say for itself.",
+        },
+        {
+          id: 'museums',
+          label: 'Art & museums',
+          description:
+            'Museums are one of my favourite ways to collect inspiration. I especially enjoy looking at how artists approach colour, composition and storytelling.',
+        },
+        {
+          id: 'books',
+          label: 'Books',
+          description:
+            "Reading is my quieter way of disappearing into someone else's world for a while.",
+        },
+        {
+          id: 'gadgets',
+          label: 'Technology & gadgets',
+          description:
+            "I have a weakness for interesting gadgets. I like figuring out how they work, what makes them useful, and whether they're actually worth buying.",
+        },
+        {
+          id: 'personal-projects',
+          label: 'Building things',
+          description:
+            "Some ideas don't need a reason to exist. If something catches my attention, I'll probably end up building it.",
+          linkTo: '/work',
+          linkLabel: 'See projects →',
+        },
+      ],
+    },
+    contactCta: {
+      label: "Let's talk →",
+      to: '/contact',
+    },
   },
-  interests: [
-    {
-      id: 'coding-ui',
-      label: 'Coding & UI experimentation',
-      description: 'Trying new frameworks and layout ideas',
-    },
-    {
-      id: 'music',
-      label: 'Music',
-      description: 'Listening, playing, and discovering sounds',
-    },
-    {
-      id: 'art',
-      label: 'Art & digital sketching',
-      description: 'Doodles and digital illustration',
-    },
-    {
-      id: 'reading',
-      label: 'Reading & research rabbit-holes',
-      description: 'Deep dives into random topics',
-    },
-    {
-      id: 'psychology',
-      label: 'Psychology & human behavior',
-      description: 'Why we think and act the way we do',
-    },
-    {
-      id: 'fitness',
-      label: 'Fitness & self-improvement',
-      description: 'Staying active and building habits',
-    },
-    {
-      id: 'writing',
-      label: 'Writing & storytelling',
-      description: 'Words, structure, and narrative',
-    },
-    {
-      id: 'productivity',
-      label: 'Tech tools & productivity systems',
-      description: 'Workflows, automation, and organization',
-    },
-  ],
-  interestsIntro:
-    'Outside of work, I explore creative, technical, and expressive hobbies that keep me curious and balanced.',
-  interestsTagline:
-    "I'm endlessly curious — outside of tech I explore anything that sharpens creativity, expression, and how humans think.",
   contactIntro:
     "Have a project, an opportunity, or just an interesting idea? Let's talk.",
   contactHeading: 'Wanna build something?',

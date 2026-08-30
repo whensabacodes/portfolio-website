@@ -1,5 +1,5 @@
 import { site } from '../../../data/site';
-import aboutPhoto from '../../../assets/portrait/portrait-image.png';
+import aboutPhoto from '../../../assets/portrait/saba-qaiser.jpg';
 import { useReveal } from '../../../hooks/useReveal';
 import { TextLink } from '../../../components/ui';
 import Sticker from '../../../decorative/Sticker/Sticker';

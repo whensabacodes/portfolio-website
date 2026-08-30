@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/navigation/Navbar';
-import Footer from '../components/navigation/Footer';
 
 function SiteLayout() {
   return (
@@ -12,7 +11,6 @@ function SiteLayout() {
       <main id="main-content" className="site-layout__main" tabIndex={-1}>
         <Outlet />
       </main>
-      <Footer />
     </div>
   );
 }

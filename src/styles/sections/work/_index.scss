@@ -62,21 +62,6 @@
   align-items: start;
 }
 
-.work-page__closing {
-  margin-top: 1rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
-  max-width: 32rem;
-}
-
-.work-page__closing-note {
-  margin: 0;
-  font-family: var(--font-hand);
-  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.1rem);
-  line-height: var(--leading-snug);
-  color: var(--color-text-muted);
-}
-
 // —— Sidebar ——
 .work-sidebar {
   position: sticky;
@@ -281,80 +266,20 @@
   max-width: 9rem;
 }
 
-.work-folder__hint {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
-  color: var(--color-text-muted);
-  opacity: 0;
-  transform: translateY(4px);
-  transition:
-    opacity var(--duration-normal) var(--ease-standard),
-    transform var(--duration-normal) var(--ease-standard);
-}
-
-.work-folder__note {
-  position: absolute;
-  left: 50%;
-  top: calc(100% - 0.15rem);
-  z-index: 2;
-  width: max-content;
-  max-width: 12rem;
-  padding: 0.2rem 0.15rem;
-  font-family: var(--font-inter, var(--font-body));
-  font-size: 0.72rem;
-  line-height: 1.35;
-  color: var(--color-text-muted);
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, 4px);
-  transition:
-    opacity var(--duration-normal) var(--ease-standard),
-    transform var(--duration-normal) var(--ease-standard);
-}
-
 .work-folder:hover .work-folder__icon,
 .work-folder:focus-visible .work-folder__icon {
   transform: translateY(-5px) rotate(-1.5deg);
 }
 
-.work-folder:hover .work-folder__hint,
-.work-folder:focus-visible .work-folder__hint {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.work-folder:hover .work-folder__note,
-.work-folder:focus-visible .work-folder__note {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
 // —— Reduced motion ——
 [data-reduced-motion='true'] {
-  .work-folder__icon,
-  .work-folder__hint,
-  .work-folder__note {
+  .work-folder__icon {
     transition: none;
   }
 
   .work-folder:hover .work-folder__icon,
   .work-folder:focus-visible .work-folder__icon {
     transform: none;
-  }
-
-  .work-folder:hover .work-folder__hint,
-  .work-folder:focus-visible .work-folder__hint,
-  .work-folder:hover .work-folder__note,
-  .work-folder:focus-visible .work-folder__note {
-    transform: none;
-  }
-
-  .work-folder:hover .work-folder__note,
-  .work-folder:focus-visible .work-folder__note {
-    transform: translate(-50%, 0);
   }
 }
 
@@ -401,10 +326,6 @@
   .work-company__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.35rem 1rem;
-  }
-
-  .work-folder__note {
-    display: none;
   }
 }
 
