@@ -1,6 +1,6 @@
 /**
- * Professional experience extracted from existing portfolio content.
- * Do not embellish — expand only with verified facts in a later content phase.
+ * Professional experience — employer → related projects.
+ * SuperDeli and InstaCEI are client projects delivered while at Appventurez.
  */
 
 export const experience = [
@@ -22,53 +22,23 @@ export const experience = [
     technologies: ['Angular', 'TypeScript', 'SCSS'],
   },
   {
-    id: 'superdeli',
-    organization: 'SuperDeli',
-    role: null,
-    start: null,
-    end: null,
-    summary:
-      'Built customer-facing e-commerce interfaces with conversion-focused UI.',
-    highlights: [
-      'Built responsive interfaces for product browsing and order flows',
-      'Collaborated closely with designers to refine UI components',
-      'Ensured cross-device performance and accessibility',
-    ],
-    relatedProjectIds: ['superdeli'],
-    technologies: ['React', 'JavaScript', 'SCSS'],
-  },
-  {
-    id: 'instacei',
-    organization: 'InstaCEI',
-    role: null,
-    start: null,
-    end: null,
-    summary:
-      'Dashboard UI for managing construction workflows and project operations.',
-    highlights: [
-      'Implemented clean dashboard layouts and modular UI components',
-      'Designed and coded several data-driven UI screens',
-      'Worked cross-functionally with backend + design teams',
-    ],
-    relatedProjectIds: ['instacei'],
-    technologies: ['Angular', 'JavaScript'],
-  },
-  {
     id: 'appventurez',
     organization: 'Appventurez',
     role: 'Intern → Software Engineer (offered full-time)',
     start: null,
     end: null,
     summary:
-      'Built the complete UI for appventurez.com during an internship and developed/maintained the CMS panel. Offered a full-time Software Engineer role after delivering the website UI.',
+      'Built the complete UI for appventurez.com during an internship, developed/maintained the CMS panel, and delivered client project UIs including SuperDeli and InstaCEI. Offered a full-time Software Engineer role after delivering the website UI.',
     highlights: [
       'Designed and developed the full UI for appventurez.com',
       'Built and maintained the CMS panel for case studies and portfolio entries',
+      'Built customer-facing e-commerce interfaces for SuperDeli',
+      'Built dashboard UI for InstaCEI construction workflows',
       'Managed company blog content via WordPress',
       'Designed branded HTML email templates for client communication',
     ],
-    relatedProjectIds: ['appventurez-cms'],
-    technologies: ['React', 'HTML/CSS', 'WordPress'],
+    relatedProjectIds: ['appventurez-cms', 'superdeli', 'instacei'],
+    technologies: ['React', 'Angular', 'JavaScript', 'HTML/CSS', 'SCSS', 'WordPress'],
   },
 ];
 
